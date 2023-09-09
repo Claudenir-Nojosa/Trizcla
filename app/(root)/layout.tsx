@@ -1,6 +1,9 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import { Inter } from "next/font/google";
 import "../globals.css";
+import Topbar from "@/components/shared/Topbar";
+import LeftSideBar from "@/components/shared/LeftSideBar";
+import BottomBar from "@/components/shared/BottomBar";
 
 export const metadata = {
   title: "Trizcla",
@@ -18,11 +21,11 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="pt-BR">
         <body className={inter.className}>
-          <TopBar />
-          <main>
+          <Topbar />
+          <main className='flex flex-row'>
             <LeftSideBar />
 
-            <section>
+            <section className='main-container'>
               <div className="w-full max-w-4xl">{children}</div>
             </section>
           </main>
