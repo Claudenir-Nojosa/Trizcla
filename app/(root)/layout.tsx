@@ -1,6 +1,6 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import { Inter } from "next/font/google";
-
+import { Providers } from "../providers";
 import "../globals.css";
 import TopBar from "@/components/shared/TopBar";
 import LeftSideBar from "@/components/shared/LeftSideBar";
@@ -22,14 +22,16 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="pt-BR">
-        <body className={`${inter.className} ` }>
+        <body className={`${inter.className} `}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <TopBar />
             <main className="flex flex-row">
               <LeftSideBar />
-              <section className="main-container">
-                <div className="w-full max-w-4xl">{children}</div>
-              </section>
+              <Providers>
+                <section className="main-container">
+                  <div className="w-full max-w-4xl mt-20">{children}</div>
+                </section>
+              </Providers>
             </main>
             <BottomBar />
           </ThemeProvider>
