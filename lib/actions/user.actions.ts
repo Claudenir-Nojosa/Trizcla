@@ -8,7 +8,6 @@ interface Params {
   userId: string;
   username: string;
   name: string;
-  bio: string;
   image: string;
   path: string;
 }
@@ -17,7 +16,6 @@ export async function updateUser({
   userId,
   username,
   name,
-  bio,
   image,
   path,
 }: Params): Promise<void> {
@@ -28,7 +26,6 @@ export async function updateUser({
       {
         username: username.toLowerCase(),
         name,
-        bio,
         image,
         onboarded: true,
       },

@@ -5,7 +5,6 @@ const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   name: { type: String, required: true },
   image: String,
-  bio: String,
   threads: [
     {
       type: mongoose.Schema.Types.ObjectId,
@@ -16,12 +15,6 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  communities: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Community",
-    },
-  ],
 });
 
 const User = mongoose.models.User || mongoose.model("User", userSchema);

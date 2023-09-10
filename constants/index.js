@@ -6,7 +6,7 @@ export const sidebarLinks = [
   },
   {
     imgURL: "/assets/money.svg",
-    route: "/crate-threade",
+    route: "/create-transaction",
     label: "Criar Movimentação",
   },
   {

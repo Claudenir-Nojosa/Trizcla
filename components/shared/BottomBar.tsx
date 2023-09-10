@@ -7,8 +7,8 @@ import { usePathname } from "next/navigation";
 function BottomBar() {
   const pathname = usePathname();
   return (
-    <section className="bottombar">
-      <div className="bottombar_container">
+    <section className="bottombar  bg-light-4 dark:bg-dark-4">
+      <div className="bottombar_container ">
         {sidebarLinks.map((link) => {
           const isActive =
             (pathname.includes(link.route) && link.route.length > 1) ||
@@ -17,7 +17,7 @@ function BottomBar() {
             <Link
               href={link.route}
               key={link.label}
-              className={`bottombar_link ${isActive && "bg-primary-500"}`}
+              className={`bottombar_link ${isActive && "bg-primary-500 dark:bg-dark-3"}`}
             >
               <Image
                 src={link.imgURL}
