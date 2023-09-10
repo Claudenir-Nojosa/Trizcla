@@ -1,6 +1,4 @@
-import type { Config } from "tailwindcss";
-
-const config: Config = {
+const config = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -174,17 +172,16 @@ const config: Config = {
     },
     extend: {
       colors: {
-        "primary-500": "#89b6a5",
+        "primary-500": "#c1bdb3",
         "secondary-500": "#4c3b4d",
-        "navbar-menu": "rgba(16, 16, 18, 0.6)",
         "dark-1": "#000000",
-        "dark-2": "#121417",
-        "dark-3": "#101012",
-        "dark-4": "#1F1F22",
+        "dark-2": "#332e3c",
+        "dark-3": "#5f5b6b",
+        "dark-4": "#323031",
         "light-1": "#FFFFFF",
-        "light-2": "#EFEFEF",
-        "light-3": "#c9eddc",
-        "light-4": "#82968c",
+        "light-2": "#dad7cd",
+        "light-3": "#a29587",
+        "light-4": "#7f7979",
         "gray-1": "#697C89",
         glassmorphism: "rgba(16, 16, 18, 0.60)",
       },

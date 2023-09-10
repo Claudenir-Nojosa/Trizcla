@@ -1,15 +1,22 @@
 import { OrganizationSwitcher, SignOutButton, SignedIn } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
-import { dark } from "@clerk/themes";
+import { ModeToggle } from "../../app/(root)/toggle";
 
 function TopBar() {
   return (
-    <nav className="topbar">
-      <Link href="/" className="flex items-center gap-4">
-        <Image src="./assets/logo.svg" alt="logo" width={150} height={150} />
+    <nav className="topbar flex md:px-16 md:py-10 py-4 px-4">
+      <Link href="/" className="flex items-center xs:gap-2 gap-4  ">
+        <Image
+          src="./assets/logo.svg"
+          alt="logo"
+          width={150}
+          height={150}
+          className="xs:h-12 h-9"
+        />
       </Link>
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-5">
+        <ModeToggle />
         <div className="block md:hidden">
           <SignedIn>
             <SignOutButton>
@@ -24,14 +31,15 @@ function TopBar() {
             </SignOutButton>
           </SignedIn>
         </div>
-        <OrganizationSwitcher
-          appearance={{
-            baseTheme: dark,
-            elements: {
-              organizationSwitcherTrigger: "py-2 px-4",
-            },
-          }}
-        />
+        <div className="hidden md:flex">
+          <OrganizationSwitcher
+            appearance={{
+              elements: {
+                organizationSwitcherTrigger: "py-2 px-4 dark:bg-[#7f7979]",
+              },
+            }}
+          />
+        </div>
       </div>
     </nav>
   );
