@@ -15,6 +15,7 @@ import {
 import { Select, SelectItem } from "@nextui-org/react";
 import { typesOfTransactions } from "@/lib/types";
 
+
 export default function App() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [backdrop, setBackdrop]: any = React.useState("blur");
@@ -67,7 +68,7 @@ export default function App() {
                       className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4"
                     >
                       <Select
-                        variant={variant}
+                        variant={variant as any}
                         label="Selecione o tipo"
                       >
                         {typesOfTransactions.map((type) => (
