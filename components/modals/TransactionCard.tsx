@@ -16,7 +16,7 @@ import { Select, SelectItem } from "@nextui-org/react";
 import { typesOfTransactions } from "@/lib/types";
 
 
-export default function App() {
+export default function TransactionModalForm() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [backdrop, setBackdrop]: any = React.useState("blur");
   const [modalPlacement, setModalPlacement] = React.useState("auto");
@@ -28,8 +28,8 @@ export default function App() {
   };
   return (
     <>
-      <Button onPress={onOpen} color="primary">
-        Criar nova movimentação
+      <Button onPress={onOpen} className="bg-gradient-to-tl from-pink-500 via-red-500 to-yellow-500 ">
+        Nova Movimentação
       </Button>
       <Modal
         backdrop={backdrop}

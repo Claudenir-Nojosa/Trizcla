@@ -25,11 +25,11 @@ export default function RootLayout({
         <body className={`${inter.className} `}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <TopBar />
-            <main className="flex flex-row">
+            <main className="">
               <LeftSideBar />
               <Providers>
-                <section className="main-container">
-                  <div className="w-full max-w-4xl mt-20">{children}</div>
+                <section className="main-container w-full h-screen flex items-center justify-start pt-28 bg-gradient-to-b from-black to-gray-900">
+                  <div className=" max-w-4xl ">{children}</div>
                 </section>
               </Providers>
             </main>

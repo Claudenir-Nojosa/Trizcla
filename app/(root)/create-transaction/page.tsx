@@ -1,8 +1,7 @@
-import Transaction from "@/components/forms/Transaction";
 import { fetchUser } from "@/lib/actions/user.actions";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
-import App from "@/components/modals/TransactionCard";
+import TransactionModalForm from "@/components/modals/TransactionCard";
 
 async function Page() {
   const user = await currentUser();
@@ -14,11 +13,11 @@ async function Page() {
   if (!userInfo?.onboarded) redirect("/onboarding");
 
   return (
-    <>
-      <h1 className="head-text">Criar movimentação financeira</h1>
-      <Transaction userId={userInfo._id} />
-      <App />
-    </>
+    <section className="flex flex-col items-center gap-5">
+      <h1 className="head-text">CRIAR MOVIMENTAÇÃO FINANCEIRA</h1>
+      <TransactionModalForm />
+      <h2 className="pt-12">Histórico</h2>
+    </section>
   );
 }
 

@@ -5,13 +5,13 @@ import { ModeToggle } from "../../app/(root)/toggle";
 
 function TopBar() {
   return (
-    <nav className="topbar flex md:px-16 md:py-10 py-4 px-4">
+    <nav className="topbar flex md:px-16 md:py-10  px-3 ">
       <Link href="/" className="flex items-center xs:gap-2 gap-4  ">
         <Image
           src="./assets/logo.svg"
           alt="logo"
-          width={150}
-          height={150}
+          width={110}
+          height={110}
           className="xs:h-12 h-9"
         />
       </Link>
