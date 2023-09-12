@@ -101,7 +101,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col justify-start gap-10"
+        className="flex flex-col justify-start gap-10 "
       >
         <FormField
           control={form.control}
@@ -128,7 +128,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
                   />
                 )}
               </FormLabel>
-              <FormControl className="flex-1 text-base-semibold text-gray-200">
+              <FormControl className="flex-1 text-base-semibold text-gray-900 dark:text-gray-200">
                 <Input
                   type="file"
                   accept="image/*"
@@ -146,13 +146,13 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
           name="name"
           render={({ field }) => (
             <FormItem className="flex gap-3 flex-col w-full">
-              <FormLabel className="text-base-semibold text-light-2">
+              <FormLabel className="text-base-semibold text-gray-900 dark:text-light-2">
                 Nome
               </FormLabel>
               <FormControl>
                 <Input
                   type="text"
-                  className="account-form_input no-focus"
+                  className="account-form_input no-focus "
                   {...field}
                 />
               </FormControl>
@@ -165,7 +165,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
           name="username"
           render={({ field }) => (
             <FormItem className="flex gap-3 flex-col w-full">
-              <FormLabel className="text-base-semibold text-light-2">
+              <FormLabel className="text-base-semibold text-gray-900 dark:text-light-2">
                 Nome do usuário
               </FormLabel>
               <FormControl>

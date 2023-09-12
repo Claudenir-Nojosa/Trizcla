@@ -11,15 +11,15 @@ export default async function Home() {
         SUA CARTEIRA
       </h1>
       <span className="text-small-semibold pb-7 pt-4">R$ 2.000.00</span>
-      <div className="flex gap-4  text-gray-950 dark:text-white ">
+      <div className="flex gap-4  text-gray-950 dark:text-white">
         <Button
-          className="outline-dark-2 h-[1.48rem] shadow-lg "
+          className="outline-dark-2 h-[1.48rem] flex-1"
           color="transparent"
         >
           Receita
         </Button>
         <Button
-          className="outline-dark-2 h-[1.48rem] shadow-lg"
+          className="outline-dark-2 h-[1.48rem] flex-1"
           color="transparent"
         >
           Despesa
