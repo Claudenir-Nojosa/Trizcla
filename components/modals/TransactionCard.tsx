@@ -83,10 +83,10 @@ export default function TransactionModalForm() {
               </ModalBody>
               <ModalFooter>
                 <Button color="danger" variant="flat" onPress={onClose}>
-                  Close
+                  Fechar
                 </Button>
                 <Button color="primary" onPress={onClose}>
-                  Sign in
+                  Enviar
                 </Button>
               </ModalFooter>
             </>

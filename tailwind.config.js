@@ -174,17 +174,17 @@ const config = {
     },
     extend: {
       colors: {
-        "primary-500": "#f1f1f1",
+        "primary-500": "#343434",
         "secondary-500": "#F28C28",
         "dark-1": "#000000",
         "dark-2": "#343434",
         "dark-3": "#1B1212",
-        "dark-4": "#28282B",
+        "dark-4": "#1B1212",
         "light-1": "#FFFFFF",
         "light-2": "#dad7cd",
         "light-3": "#FFF5EE",
-        "light-4": "#F2D2BD",
-        "gray-1": "#FFA500",
+        "light-4": "#8a8a8a ",
+        "gray-1": "#F28C28",
         glassmorphism: "rgba(16, 16, 18, 0.60)",
       },
       screens: {

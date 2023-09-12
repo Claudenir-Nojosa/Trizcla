@@ -1,4 +1,5 @@
 import { ClerkProvider } from "@clerk/nextjs";
+import { ptBR } from "@clerk/localizations";
 import { Inter } from "next/font/google";
 import { Providers } from "../providers";
 import "../globals.css";
@@ -20,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider localization={ptBR}>
       <html lang="pt-BR">
         <body className={`${inter.className} `}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
@@ -28,7 +29,7 @@ export default function RootLayout({
             <main className="">
               <LeftSideBar />
               <Providers>
-                <section className="main-container w-full h-screen flex items-center justify-start pt-28 bg-gradient-to-b from-black to-gray-900">
+                <section className="main-container w-full h-screen flex items-center justify-start pt-28 dark:bg-slate-950 bg-gray-100">
                   <div className=" max-w-4xl ">{children}</div>
                 </section>
               </Providers>
