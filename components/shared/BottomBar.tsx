@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 function BottomBar() {
   const pathname = usePathname();
   return (
-    <section className="bottombar  bg-light-4 dark:bg-dark-4">
+    <section className="bottombar  bg-light-4 dark:bg-slate-950">
       <div className="bottombar_container ">
         {sidebarLinks.map((link) => {
           const isActive =
@@ -17,7 +17,7 @@ function BottomBar() {
             <Link
               href={link.route}
               key={link.label}
-              className={`bottombar_link ${isActive && "bg-primary-500 dark:bg-gray-1"}`}
+              className={`bottombar_link ${isActive && "bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"}`}
             >
               <Image
                 src={link.imgURL}
