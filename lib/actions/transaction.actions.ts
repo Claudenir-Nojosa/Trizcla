@@ -6,7 +6,6 @@ import User from "../models/user.model";
 import { connectToDB } from "../mongoose";
 
 interface Params {
-  title: string;
   description: string;
   value: string;
   type: string;
@@ -15,7 +14,6 @@ interface Params {
 }
 
 export async function createTransaction({
-  title,
   description,
   value,
   type,
@@ -26,7 +24,6 @@ export async function createTransaction({
     connectToDB();
 
     const createdTransaction = await Transaction.create({
-      title,
       author,
       description,
       value,

@@ -1,7 +1,6 @@
 import { fetchUser } from "@/lib/actions/user.actions";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
-import TransactionModalForm from "@/components/modals/TransactionCard";
 import TransactionForm from "@/components/forms/TransactionForm";
 
 async function Page() {
@@ -16,7 +15,6 @@ async function Page() {
   return (
     <section className="flex flex-col items-center gap-5">
       <h1 className="head-text">CRIAR MOVIMENTAÇÃO FINANCEIRA</h1>
-      {/*       <TransactionModalForm userId={userInfo._id} /> */}
       <TransactionForm userId={userInfo._id} />
       <h2 className="pt-12">Histórico</h2>
     </section>
