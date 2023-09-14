@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 function BottomBar() {
   const pathname = usePathname();
   return (
-    <section className="bottombar  bg-light-4 dark:bg-slate-950">
+    <section className="bottombar  bg-gray-300 dark:bg-slate-950">
       <div className="bottombar_container ">
         {sidebarLinks.map((link) => {
           const isActive =

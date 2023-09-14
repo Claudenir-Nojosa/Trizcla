@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@nextui-org/react";
-
+import Chart from "react-apexcharts";
 export default async function Home() {
   return (
     <div className="flex flex-col items-center">

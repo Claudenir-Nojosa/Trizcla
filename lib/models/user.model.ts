@@ -5,10 +5,10 @@ const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   name: { type: String, required: true },
   image: String,
-  threads: [
+  transactions: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Thread",
+      ref: "Transaction",
     },
   ],
   onboarded: {

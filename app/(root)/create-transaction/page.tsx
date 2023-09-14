@@ -15,7 +15,7 @@ async function Page() {
   return (
     <section className="flex flex-col items-center gap-5">
       <h1 className="head-text">CRIAR MOVIMENTAÇÃO FINANCEIRA</h1>
-      <TransactionModalForm />
+      <TransactionModalForm userId={userInfo._id} />
       <h2 className="pt-12">Histórico</h2>
     </section>
   );
