@@ -1,6 +1,8 @@
 "use client";
 import { Button } from "@nextui-org/react";
-import Chart from "react-apexcharts";
+import { Doughnut } from "react-chartjs-2";
+import { data } from "@/components/charts/PieChart";
+
 export default async function Home() {
   return (
     <div className="flex flex-col items-center">
@@ -24,8 +26,8 @@ export default async function Home() {
         >
           Despesa
         </Button>
-       {/*  Vou utilizar um gráfico donut utilizando Apex Charts */}
       </div>
+      <Doughnut data={data}  className="w-[230px] mt-10"/>
     </div>
   );
 }
