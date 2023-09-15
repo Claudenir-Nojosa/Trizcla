@@ -8,6 +8,9 @@
   .main-container {
     @apply flex min-h-screen flex-1 flex-col items-center bg-light-2 dark:bg-black ;
   }
+  .form-Income-Expense {
+    @apply  bg-gradient-to-tl from-pink-500 via-red-500 to-yellow-500 
+  }
 
   /* Head Text */
   .head-text {

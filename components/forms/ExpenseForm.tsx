@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -32,7 +33,7 @@ const ExpenseForm = ({ userId }: Props) => {
   const router = useRouter();
   const pathname = usePathname();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-
+  const [backdrop, setBackdrop]: any = React.useState("blur");
   const form = useForm({
     resolver: zodResolver(ExpenseValidation),
     defaultValues: {
@@ -56,14 +57,24 @@ const ExpenseForm = ({ userId }: Props) => {
 
   return (
     <>
-      <Button onPress={onOpen} color="primary" className="w-[150px]">
+      <Button
+        onPress={onOpen}
+        color="primary"
+        className="form-Income-Expense w-[150px] h-[30px]"
+      >
         Adicionar Despesa
       </Button>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
+      <Modal
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
+        placement="center"
+        backdrop={backdrop}
+        className="max-w-[20rem]"
+      >
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">
+              <ModalHeader className="flex flex-col gap-1 head-text">
                 Adicionar Despesa
               </ModalHeader>
               <ModalBody>
@@ -84,6 +95,7 @@ const ExpenseForm = ({ userId }: Props) => {
                             <Input
                               type="text"
                               className="account-form_input no-focus"
+                              placeholder="Insira aqui a descrição"
                               {...field}
                             />
                           </FormControl>
@@ -103,6 +115,7 @@ const ExpenseForm = ({ userId }: Props) => {
                             <Input
                               type="string"
                               className="account-form_input no-focus"
+                              placeholder="Insira aqui o valor"
                               {...field}
                             />
                           </FormControl>
@@ -116,7 +129,7 @@ const ExpenseForm = ({ userId }: Props) => {
                       render={({ field }) => (
                         <FormItem className="flex gap-3 flex-col w-full">
                           <FormLabel className="text-base-semibold text-gray-900 dark:text-light-2">
-                            type
+                            Data
                           </FormLabel>
                           <FormControl>
                             <Input
@@ -129,16 +142,14 @@ const ExpenseForm = ({ userId }: Props) => {
                         </FormItem>
                       )}
                     />
-                    <Button
-                      className="bg-primary-500"
-                      type="submit"
-                      onPress={onClose}
-                    >
-                      Cancelar
-                    </Button>
-                    <Button className="bg-primary-500" type="submit">
-                      Prosseguir
-                    </Button>
+                    <div className="flex gap-3 justify-end">
+                      <Button className="bg-primary-500" onPress={onClose}>
+                        Cancelar
+                      </Button>
+                      <Button className="form-Income-Expense" type="submit">
+                        Prosseguir
+                      </Button>
+                    </div>
                   </form>
                 </Form>
               </ModalBody>
