@@ -1,41 +1,41 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import Transaction from "../models/transaction.model";
+import Expense from "../models/expense.model";
 import User from "../models/user.model";
 import { connectToDB } from "../mongoose";
 
 interface Params {
   description: string;
   value: string;
-  type: string;
   author: string;
   path: string;
+  date: string;
 }
 
-export async function createTransaction({
+export async function createExpense({
   description,
   value,
-  type,
   author,
   path,
+  date,
 }: Params) {
   try {
     connectToDB();
 
-    const createdTransaction = await Transaction.create({
+    const createdExpense = await Expense.create({
       author,
       description,
       value,
-      type,
+      date,
     });
 
     await User.findByIdAndUpdate(author, {
-      $push: { transactions: createdTransaction._id },
+      $push: { expenses: createdExpense._id },
     });
 
     revalidatePath(path);
   } catch (error: any) {
-    console.error(`Error creating Transaction: ${error}`);
+    console.error(`Error creating Expense: ${error}`);
   }
 }

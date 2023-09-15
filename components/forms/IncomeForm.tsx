@@ -21,34 +21,34 @@ import {
 import { Input } from "@/components/ui/input";
 import * as z from "zod";
 import { usePathname, useRouter } from "next/navigation";
-import { TransactionValidation } from "@/lib/validations/transaction";
-import { createTransaction } from "@/lib/actions/transaction.actions";
+import { IncomeValidation } from "@/lib/validations/income";
+import { createIncome } from "@/lib/actions/income.actions";
 
 interface Props {
   userId: string;
 }
 
-const TransactionForm = ({ userId }: Props) => {
+const IncomeForm = ({ userId }: Props) => {
   const router = useRouter();
   const pathname = usePathname();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const form = useForm({
-    resolver: zodResolver(TransactionValidation),
+    resolver: zodResolver(IncomeValidation),
     defaultValues: {
       description: "",
       value: "",
-      type: "",
       accountId: "",
+      date: "",
     },
   });
-  const onSubmit = async (values: z.infer<typeof TransactionValidation>) => {
-    await createTransaction({
-      type: values.type,
+  const onSubmit = async (values: z.infer<typeof IncomeValidation>) => {
+    await createIncome({
       description: values.description,
       value: values.value,
       path: pathname,
       author: userId,
+      date: values.date,
     });
 
     router.push("/");
@@ -56,15 +56,15 @@ const TransactionForm = ({ userId }: Props) => {
 
   return (
     <>
-      <Button onPress={onOpen} color="primary">
-        Criar movimentação
+      <Button onPress={onOpen} color="primary" className="w-[150px]">
+        Adicionar Receita
       </Button>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
         <ModalContent>
           {(onClose) => (
             <>
               <ModalHeader className="flex flex-col gap-1">
-                Criar movimentação
+                Adicionar Receita
               </ModalHeader>
               <ModalBody>
                 <Form {...form}>
@@ -112,7 +112,7 @@ const TransactionForm = ({ userId }: Props) => {
                     />
                     <FormField
                       control={form.control}
-                      name="type"
+                      name="date"
                       render={({ field }) => (
                         <FormItem className="flex gap-3 flex-col w-full">
                           <FormLabel className="text-base-semibold text-gray-900 dark:text-light-2">
@@ -120,7 +120,7 @@ const TransactionForm = ({ userId }: Props) => {
                           </FormLabel>
                           <FormControl>
                             <Input
-                              type="text"
+                              type="date"
                               className="account-form_input no-focus"
                               {...field}
                             />
@@ -150,4 +150,4 @@ const TransactionForm = ({ userId }: Props) => {
   );
 };
 
-export default TransactionForm;
+export default IncomeForm;

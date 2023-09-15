@@ -5,10 +5,16 @@ const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   name: { type: String, required: true },
   image: String,
-  transactions: [
+  incomes: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Transaction",
+      ref: "Income",
+    },
+  ],
+  expenses: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Expense",
     },
   ],
   onboarded: {
