@@ -2,6 +2,7 @@
 import { Button } from "@nextui-org/react";
 import { Doughnut } from "react-chartjs-2";
 import { data } from "@/components/charts/PieChart";
+import { getExpenses } from "@/lib/actions/expense.actions";
 
 export default async function Home() {
   return (
