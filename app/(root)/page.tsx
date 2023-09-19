@@ -2,6 +2,7 @@
 import { Button } from "@nextui-org/react";
 import { Doughnut } from "react-chartjs-2";
 import { data } from "@/components/charts/PieChart";
+
 export default async function Home() {
   return (
     <div className="flex flex-col items-center">
@@ -11,7 +12,8 @@ export default async function Home() {
       <h1 className="head-text text-left bg-clip-text text-[2rem]">
         SUA CARTEIRA
       </h1>
-      <span className="text-small-semibold pb-7 pt-4">R$ 2.000.00</span>
+
+      <span className="text-small-semibold pb-7 pt-4">Inserir valor aqui</span>
       <div className="flex gap-4  text-gray-950 dark:text-white">
         <Button
           className="outline-dark-2 h-[1.48rem] flex-1"
@@ -26,7 +28,7 @@ export default async function Home() {
           Despesa
         </Button>
       </div>
-      <Doughnut data={data}  className="w-[230px] mt-10"/>
+      <Doughnut data={data} className="w-[230px] mt-10" />
     </div>
   );
 }

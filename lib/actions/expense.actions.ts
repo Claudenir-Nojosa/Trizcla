@@ -39,12 +39,3 @@ export async function createExpense({
     console.error(`Error creating Expense: ${error}`);
   }
 }
-
-export async function getExpenses(userId: any) {
-  try {
-    connectToDB();
-    return await Expense.find({ author: userId });
-  } catch (error) {
-    console.log(`There was an error getting the Expenses: ${error}`)
-  }
-}

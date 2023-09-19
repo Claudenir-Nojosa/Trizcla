@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+
   
   /* main */
   .main-container {
@@ -50,7 +50,7 @@
     @apply relative flex justify-start bg-light-4 dark:bg-dark-1 gap-4 rounded-lg p-4;
   }
 
-}
+
 
 @layer utilities {
   .css-invert {
