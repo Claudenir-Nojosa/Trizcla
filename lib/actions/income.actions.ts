@@ -7,7 +7,7 @@ import { connectToDB } from "../mongoose";
 
 interface Params {
   description: string;
-  value: string;
+  value: number;
   author: string;
   path: string;
   date: string;

@@ -39,7 +39,7 @@ const IncomeForm = ({ userId }: Props) => {
     resolver: zodResolver(IncomeValidation),
     defaultValues: {
       description: "",
-      value: "",
+      value: 0,
       accountId: "",
       date: "",
     },
@@ -114,7 +114,7 @@ const IncomeForm = ({ userId }: Props) => {
                           </FormLabel>
                           <FormControl>
                             <Input
-                              type="string"
+                              type="number"
                               className="account-form_input no-focus"
                               placeholder="Insira aqui o valor"
                               {...field}

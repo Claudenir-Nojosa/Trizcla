@@ -38,7 +38,7 @@ const ExpenseForm = ({ userId }: Props) => {
     resolver: zodResolver(ExpenseValidation),
     defaultValues: {
       description: "",
-      value: "",
+      value: 0,
       accountId: "",
       date: "",
     },
@@ -113,7 +113,7 @@ const ExpenseForm = ({ userId }: Props) => {
                           </FormLabel>
                           <FormControl>
                             <Input
-                              type="string"
+                              type="number"
                               className="account-form_input no-focus"
                               placeholder="Insira aqui o valor"
                               {...field}
