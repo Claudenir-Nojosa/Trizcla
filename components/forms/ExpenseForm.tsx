@@ -52,7 +52,8 @@ const ExpenseForm = ({ userId }: Props) => {
       date: values.date,
     });
 
-    router.push("/");
+    router.push('/');
+    
   };
 
   return (

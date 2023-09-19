@@ -39,7 +39,7 @@ const IncomeForm = ({ userId }: Props) => {
     resolver: zodResolver(IncomeValidation),
     defaultValues: {
       description: "",
-      value: 0,
+      value: "",
       accountId: "",
       date: "",
     },
@@ -52,8 +52,8 @@ const IncomeForm = ({ userId }: Props) => {
       author: userId,
       date: values.date,
     });
-
-    router.push("/");
+    
+    router.push('/');
   };
 
   return (
@@ -148,7 +148,10 @@ const IncomeForm = ({ userId }: Props) => {
                       <Button className="bg-primary-500" onPress={onClose}>
                         Cancelar
                       </Button>
-                      <Button className="form-Income-Expense" type="submit">
+                      <Button
+                        className="form-Income-Expense"
+                        type="submit"
+                      >
                         Prosseguir
                       </Button>
                     </div>

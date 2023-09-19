@@ -5,7 +5,7 @@ import { ModeToggle } from "../../app/(root)/toggle";
 
 function TopBar() {
   return (
-    <nav className="topbar flex md:px-16 md:py-10  px-3 bg-gradient-to-r from-gray-800 via-gray-900 to-black dark:bg-slate-950">
+    <nav className="topbar flex md:px-16 md:py-10 border-1 border-t-0 dark:border-gray-1 px-3 dark:bg-slate-950">
       <Link href="/" className="flex items-center xs:gap-2 gap-4  ">
         <Image
           src="./assets/logo.svg"

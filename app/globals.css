@@ -27,7 +27,7 @@
     @apply text-center !text-base-regular text-light-3;
   }
   .topbar {
-    @apply fixed top-0 z-30 flex w-full bg-light-4 dark:bg-dark-4 items-center justify-between  px-6 py-3 rounded-b-3xl ;
+    @apply fixed top-0 z-30 flex w-full bg-light-4 dark:bg-dark-4 items-center justify-between  px-6 py-3 rounded-b-2xl ;
   }
 
   .bottombar {
