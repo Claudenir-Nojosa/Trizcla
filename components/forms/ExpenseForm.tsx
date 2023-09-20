@@ -34,13 +34,17 @@ const ExpenseForm = ({ userId }: Props) => {
   const pathname = usePathname();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [backdrop, setBackdrop]: any = React.useState("blur");
+
+  const currentDate = new Date();
+  const currentDateString = currentDate.toISOString().split("T")[0];
+
   const form = useForm({
     resolver: zodResolver(ExpenseValidation),
     defaultValues: {
       description: "",
       value: 0,
       accountId: "",
-      date: "",
+      date: currentDateString,
     },
   });
   const onSubmit = async (values: z.infer<typeof ExpenseValidation>) => {

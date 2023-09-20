@@ -35,13 +35,16 @@ const IncomeForm = ({ userId }: Props) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [backdrop, setBackdrop]: any = React.useState("blur");
 
+  const currentDate = new Date();
+  const currentDateString = currentDate.toISOString().split("T")[0];
+
   const form = useForm({
     resolver: zodResolver(IncomeValidation),
     defaultValues: {
       description: "",
-      value: "",
+      value: 0,
       accountId: "",
-      date: "",
+      date: currentDateString,
     },
   });
   const onSubmit = async (values: z.infer<typeof IncomeValidation>) => {
@@ -111,7 +114,7 @@ const IncomeForm = ({ userId }: Props) => {
                         <FormItem className="flex gap-3 flex-col w-full">
                           <FormLabel className="text-base-semibold text-gray-900 dark:text-light-2">
                             Valor
-                          </FormLabel>
+                          </FormLabel>  
                           <FormControl>
                             <Input
                               type="number"
